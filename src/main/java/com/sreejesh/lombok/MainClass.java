@@ -9,7 +9,13 @@ public class MainClass {
 		// testRuntimeException();
 		// testExceptionHandled();
 		// testExceptionWrappedInRuntimeException();
-		testSneakyThrowsException();
+		// testSneakyThrowsException();
+
+		try {
+			testSneakyThrowsException();
+		} catch (Exception e) {
+			System.out.println("***** Handled SneakyThrows! *****");
+		}
 		System.out.println("***** Exiting Main *****");
 	}
 
@@ -32,7 +38,7 @@ public class MainClass {
 			throw new RuntimeException("My custom RuntimeExcption", e);
 		}
 	}
-	
+
 	@SneakyThrows
 	public static void testSneakyThrowsException() {
 		throw new Exception("My custom Exception!");
